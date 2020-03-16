@@ -20,7 +20,7 @@ webtitle: 'Research & Coding'
 bio: ''
 about: true
 aboutyou: '&emsp;&emsp;My name is Lang Chunyang (郎春阳). I graduated from <a href="http://www.seu.edu.cn">====</a> with ==== in ==== (====). Now, I am a ==== at <a href="http://www.nlpr.ia.ac.cn/nlpren/EN/volumn/home.shtml">====</a>, <a href="http://english.cas.cn">====</a>, supervised by Prof. <a href="http://www.cbsr.ia.ac.cn/users/zlei/">====</a> and Prof. <a href="http://www.cbsr.ia.ac.cn/users/szli">====</a>, where I mainly research on <b>====</b>, <b>====</b>, <b>====</b> and <b>====</b>. <br/>&emsp;&emsp;More to see <a href="/2018/10/07/index.html">here</a>.<br>'
-portraits: '/assets/profile.jpeg' # your portraits image file path
+portraits: 'http://qiniu.xnmll.cn/t.jpg' # your portraits image file path
 
 # SNS
 SNS: true
