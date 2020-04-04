@@ -1,8 +1,12 @@
-I"U<blockquote>
+I"	<blockquote>
   <p>prepare for pat , record process</p>
 </blockquote>
 
 <p>[TOC]</p>
+
+<h2 id="坑点">坑点</h2>
+
+<h3 id="todo">todo</h3>
 
 <h2 id="计划与准备">计划与准备</h2>
 
@@ -76,5 +80,16 @@
     </tr>
   </tbody>
 </table>
+
+<h3 id="原定内容">原定内容</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />算法笔记刷两遍（独立思考）</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />pta题库 甲级乙级所有题</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />晴神oj</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />每日力扣习题</li>
+</ul>
+
+<h3 id="实际成绩">实际成绩</h3>
 
 :ET
