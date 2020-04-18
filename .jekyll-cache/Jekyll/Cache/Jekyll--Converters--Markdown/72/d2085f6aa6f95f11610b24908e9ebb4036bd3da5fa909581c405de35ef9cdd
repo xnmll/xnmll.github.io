@@ -1,0 +1,21 @@
+I"ê<blockquote>
+  <p>The initial page was created at 2020-3-11</p>
+
+  <p>Video test , add images and speed up access at 2020-3-16</p>
+
+  <p>add photos about first date at 2020-4-15</p>
+</blockquote>
+
+<h3 id="photos">Photos</h3>
+
+<p><img src="http://qiniu.xnmll.cn/1.JPG" alt="img" />
+<img src="http://qiniu.xnmll.cn/demo1.jpg" alt="img" />
+<img src="http://qiniu.xnmll.cn/mei.jpg" alt="img" />
+<img src="http://qiniu.xnmll.cn/firstdate.jpg" alt="img" /></p>
+
+<h3 id="videos">Videos</h3>
+
+<iframe src="http://player.bilibili.com/player.html?aid=20550247&amp;cid=33609670&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:500px;max-width: 100%"> </iframe>
+<h3 id="else">Else</h3>
+
+:ET
