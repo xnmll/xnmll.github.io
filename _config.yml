@@ -21,33 +21,33 @@ webtitle: 'Research & Coding'
 bio: ''
 about: true
 aboutyou: '&emsp;&emsp;My name is Lang Chunyang (郎春阳). I graduated from <a href="http://www.seu.edu.cn">====</a> with ==== in ==== (====). Now, I am a ==== at <a href="http://www.nlpr.ia.ac.cn/nlpren/EN/volumn/home.shtml">====</a>, <a href="http://english.cas.cn">====</a>, supervised by Prof. <a href="http://www.cbsr.ia.ac.cn/users/zlei/">====</a> and Prof. <a href="http://www.cbsr.ia.ac.cn/users/szli">====</a>, where I mainly research on <b>====</b>, <b>====</b>, <b>====</b> and <b>====</b>. <br/>&emsp;&emsp;More to see <a href="/2018/10/07/index.html">here</a>.<br>'
-portraits: 'http://qiniu.xnmll.cn/t.jpg' # your portraits image file path
+portraits: 'https://i.niupic.com/images/2020/12/31/97Ql.jpeg' # your portraits image file path
 
 # SNS
 SNS: true
 SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen']
   mail: 'mailto:xnmlllcy@gmail.com'
-  weixin: '/assets/wechat.png' # 你的微信二维码存放的地址
+  #weixin: '/assets/wechat.png' # 你的微信二维码存放的地址
   #qq: '' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
   github: 'https://github.com/xnmll'
   #Codepen: ''
   #weibo: ''
-  #instagram: ''
+  instagram: ''
   Twitter: 'https://twitter.com/CnXnmll'
   #Dribbble: ''
   #Facebook: ''
   #Google: ''
-  zhihu: 'https://www.zhihu.com/people/xnmll01'
+  #zhihu: 'https://www.zhihu.com/people/xnmll01'
   #juejin: ''
   #twitch: ''
 
 # 分页
-paginate: 2
+paginate: 3
 paginatepath: ['page:num']
 
 # since
 footer:
-  since: 2020
+  since: 2018
 
 # Markdown
 markdown: kramdown
