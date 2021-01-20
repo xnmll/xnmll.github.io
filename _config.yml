@@ -10,7 +10,7 @@ nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
   Tags: '/tags/'
   Timeline: '/timeline.html'
   About me: '/about.html'
-  reLink: '/reLink/'
+  #reLink: '/reLink/'
   #友情链接: '/friendLink.html'
 
 # 博主
