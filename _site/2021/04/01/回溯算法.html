@@ -1,0 +1,500 @@
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Research & Coding" />
+<meta name="keywords" content="your web keywords, another keywords" />
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_default.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="//at.alicdn.com/t/font_856428_y9z6nq7zf5.js"></script>
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+<!-- Favicon -->
+<link href="/assets/profile.jpeg" rel="shortcut icon" />
+<link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>回溯算法一</title>
+<!-- 百度统计 -->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- 谷歌分析 -->
+
+
+<!-- Android Lolipop Theme Color -->
+<meta name="theme-color" content=" rgb(60,127,204) ">
+</head>
+<body>
+
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+
+<header id="post-header" style="background-color:rgb(60,127,204);">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="my awesome webtitle" style="color: white;">Research & Coding</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/" style="color: white;">Homepage</a></li>
+              
+                <li><a href="/tags/" style="color: white;">Tags</a></li>
+              
+                <li><a href="/timeline.html" style="color: white;">Timeline</a></li>
+              
+                <li><a href="/about.html" style="color: white;">About me</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+
+<!-- 引入移动下拉选项 -->
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>Homepage</li></a>
+        
+          <a href="/tags/"><li>Tags</li></a>
+        
+          <a href="/timeline.html"><li>Timeline</li></a>
+        
+          <a href="/about.html"><li>About me</li></a>
+        
+    </ul>
+</div>
+
+<!-- 引入博文顶部样式 -->
+<!-- 版本一 垃圾 -->
+<!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <span class="wow fadeInUp" data-wow-delay="0.2s">回溯算法一</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;郎春阳</span>
+</div> -->
+
+<!-- 版本二 可切换页面 -->
+
+<div class="post-top" style="background-color:rgb(60,127,204);">
+  <!-- 页面宽度大于800px -->
+  <div class="left-area">
+    
+      <a href="javascript:;" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(60,127,204)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(60,127,204);"><sapn class="main">没有上一页咯</sapn></span></div>
+    
+  </div>
+  <div class="post-titlearea">
+    <span class="wow fadeInUp" data-wow-delay="0.2s">回溯算法一</span>
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;郎春阳</span> -->
+  </div>
+  <div class="right-area">
+    
+      <a href="/2021/01/20/%E5%B7%A5%E4%BD%9C%E5%87%86%E5%A4%87.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='rgb(60,127,204)';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:rgb(60,127,204);"><sapn class="main">acwing notes</sapn></span></div>
+    
+  </div>
+
+  <!-- 页面宽度小于800px -->
+  <div class="post-changearea">
+    
+      <a href="javascript:;" class="leftchange" style="border-right: 1px solid rgb(60,127,204);border-bottom: 2px solid rgb(60,127,204);"><span><br>没有上一篇咯</span></a>
+    
+    
+      <a href="/2021/01/20/%E5%B7%A5%E4%BD%9C%E5%87%86%E5%A4%87.html" class="rightchange" style="border-left: 1px solid rgb(60,127,204);border-bottom: 2px solid rgb(60,127,204);"><span>下一篇<br><br>acwing notes</span></a>
+    
+  </div>
+</div>
+
+
+<div class="markdown-body fadeInUp animated">
+
+  
+    
+      <div class="postpage-subtitle" style="border-left: 8px solid rgb(60,127,204); border-right: 8px solid rgb(60,127,204)">
+        回溯算法
+      </div>
+    
+  
+
+  <!-- 文章内容 -->
+  <h1 id="回溯算法part-one子集组合">回溯算法part one(子集、组合)</h1>
+
+<p>算法思想：</p>
+
+<h4 id="1-dfs-和回溯算法区别">1 DFS 和回溯算法区别</h4>
+
+<p>DFS 是一个劲的往某一个方向搜索，而回溯算法建立在 DFS 基础之上的，但不同的是在搜索过程中，达到结束条件后，恢复状态，回溯上一层，再次搜索。因此回溯算法与 DFS 的区别就是有无状态重置</p>
+
+<h4 id="2-何时使用回溯算法">2 何时使用回溯算法</h4>
+
+<p><strong>当问题需要 “回头”，以此来查找出所有的解的时候</strong>，使用回溯算法。即满足结束条件或者发现不是正确路径的时候(走不通)，要撤销选择，回退到上一个状态，继续尝试，直到找出所有解为止</p>
+
+<h4 id="3-怎么样写回溯算法从上而下代表难点根据题目而变化">3 怎么样写回溯算法(从上而下，※代表难点，根据题目而变化)</h4>
+
+<ul>
+  <li><strong>①画出递归树，找到状态变量(回溯函数的参数)，这一步非常重要</strong>※</li>
+  <li><strong>②根据题意，确立结束条件</strong></li>
+  <li><strong>③找准选择列表(与函数参数相关),与第一步紧密关联</strong>※</li>
+  <li><strong>④判断是否需要剪枝</strong></li>
+  <li><strong>⑤作出选择，递归调用，进入下一层</strong></li>
+  <li><strong>⑥撤销选择</strong></li>
+</ul>
+
+<h4 id="4-回溯问题的类型">4 回溯问题的类型</h4>
+
+<p>这里先给出，我总结的回溯问题类型，并给出相应的 leetcode题目(一直更新)，然后再说如何去编写。<strong>特别关注搜索类型的</strong>，搜索类的搞懂，你就真的搞懂回溯算法了,前面两类是基础，帮助你培养思维</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>题目链接</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>子集、组合</td>
+      <td><a href="https://leetcode-cn.com/problems/subsets/">子集</a>、<a href="https://leetcode-cn.com/problems/subsets-ii/">子集 II</a>、<a href="https://leetcode-cn.com/problems/combinations/">组合</a>、<a href="https://leetcode-cn.com/problems/combination-sum/">组合总和</a>、<a href="https://leetcode-cn.com/problems/combination-sum-ii/">组合总和 II</a></td>
+    </tr>
+    <tr>
+      <td>全排列</td>
+      <td><a href="https://leetcode-cn.com/problems/permutations/">全排列</a>、<a href="https://leetcode-cn.com/problems/permutations-ii/">全排列 II</a>、<a href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/">字符串的全排列</a>、<a href="https://leetcode-cn.com/problems/letter-case-permutation/">字母大小写全排列</a></td>
+    </tr>
+    <tr>
+      <td><strong>搜索</strong></td>
+      <td><a href="https://leetcode-cn.com/problems/sudoku-solver/">解数独</a>、<a href="https://leetcode-cn.com/problems/word-search/">单词搜索</a>、<a href="https://leetcode-cn.com/problems/eight-queens-lcci/">N皇后</a>、<a href="https://leetcode-cn.com/problems/palindrome-partitioning/">分割回文串</a>、<a href="https://leetcode-cn.com/problems/binary-watch/">二进制手表</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>注意：子集、组合与排列是不同性质的概念。子集、组合是无关顺序的，而排列是和元素顺序有关的，如 <code class="language-plaintext highlighter-rouge">[1，2]</code> 和 <code class="language-plaintext highlighter-rouge">[2，1]</code> 是同一个组合(子集)，但 <code class="language-plaintext highlighter-rouge">[1,2]</code> 和 <code class="language-plaintext highlighter-rouge">[2,1]</code> 是两种不一样的排列！！！！因此被分为两类问题</strong></p>
+
+<h4 id="5-三道例题实战">5 三道例题实战</h4>
+
+<hr />
+
+<h5 id="a-子集---给定一组不含重复元素的整数数组-nums返回该数组所有可能的子集幂集">A、 <a href="https://leetcode-cn.com/problems/subsets/">子集</a> - 给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。</h5>
+
+<p>解题步骤：</p>
+
+<p><strong>①递归树</strong></p>
+
+<p><img src="https://i.niupic.com/images/2021/04/01/9geg.png" alt="1" /></p>
+
+<p>观察上图可得，<strong>选择列表里的数，都是选择路径(红色框)后面的数</strong>，比如[1]这条路径，他后面的选择列表只有”2、3”，[2]这条路径后面只有”3”这个选择，那么这个时候，就应该<strong>使用一个参数start，来标识当前的选择列表的起始位置。也就是标识每一层的状态，因此被形象的称为”状态变量”</strong></p>
+
+<p><strong>②找结束条件</strong></p>
+
+<p>此题非常特殊，所有路径都应该加入结果集，所以不存在结束条件。或者说当 start 参数越过数组边界的时候，程序就自己跳过下一层递归了，因此不需要手写结束条件,直接加入结果集</p>
+
+<p><strong>③找选择列表</strong></p>
+
+<p>在①中已经提到过了，子集问题的选择列表，是上一条选择路径之后的数</p>
+
+<p><strong>④判断是否需要剪枝</strong></p>
+
+<p>从递归树中看到，路径没有重复的，也没有不符合条件的，所以不需要剪枝</p>
+
+<p><strong>⑤做出选择(即for 循环里面的)</strong></p>
+
+<p><strong>⑥撤销选择</strong></p>
+
+<p>最终代码为</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">subsets</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">dfs</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">nums</span><span class="p">,</span><span class="kt">int</span> <span class="n">start</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">start</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">path</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="c1">//做出选择</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="c1">//递归进入下一层，注意i+1，标识下一个选择列表的开始位置，最重要的一步</span>
+            <span class="n">path</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span><span class="c1">//撤销选择</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<hr />
+
+<h5 id="b子集-ii剪枝思想问题描述给定一个可能-包含重复元素-的整数数组-nums返回该数组所有可能的子集幂集"><strong>B、<a href="https://leetcode-cn.com/problems/subsets-ii/">子集 II</a>(剪枝思想)–问题描述:给定一个可能 包含重复元素 的整数数组 nums，返回该数组所有可能的子集（幂集）。</strong></h5>
+
+<p>解题步骤：</p>
+
+<p><strong>①递归树</strong></p>
+
+<p><img src="https://i.niupic.com/images/2021/04/01/9geh.png" alt="https://i.niupic.com/images/2021/04/01/9geh.png" /></p>
+
+<p>可以发现，树中出现了大量重复的集合，②和③和第一个问题一样，不再赘述，我们直接看第四步</p>
+
+<p><strong>④判断是否需要剪枝，需要先对数组排序，使用排序函数</strong></p>
+
+<p>显然我们需要去除重复的集合，即需要剪枝，把递归树上的某些分支剪掉。那么应去除哪些分支呢？又该如何编码呢？</p>
+
+<p><strong>观察上图不难发现，应该去除当前选择列表中，与上一个数重复的那个数，引出的分支，如 “2，2” 这个选择列表，第二个 “2” 是最后重复的，应该去除这个 “2” 引出的分支</strong></p>
+
+<p><img src="https://i.niupic.com/images/2021/04/01/9gel.png" alt="" /></p>
+
+<p>(去除图中红色大框中的分支)</p>
+
+<p>编码呢，刚刚说到是 “去除当前选择列表中，与上一个数重复的那个数，引出的分支”，说明当前列表最少有两个数，当i&gt;start时，做选择的之前，比较一下当前数，与上一个数 <code class="language-plaintext highlighter-rouge">(i-1)</code> 是不是相同，相同则 continue</p>
+
+<p><strong>⑤做出选择</strong></p>
+
+<p><strong>⑥撤销选择</strong></p>
+
+<p>最终代码为</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">res</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">dfs</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">nums</span><span class="p">,</span><span class="kt">int</span> <span class="n">start</span><span class="p">){</span>
+        <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">start</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="n">start</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
+            <span class="n">path</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+            <span class="n">path</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">subsetsWithDup</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<hr />
+
+<h5 id="c组合总和---问题描述">C、<a href="https://leetcode-cn.com/problems/combination-sum/">组合总和</a> - 问题描述</h5>
+
+<p>给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+candidates 中的数字可以<strong>无限制重复被选取</strong>。</p>
+
+<p>输入: candidates = [1,2,3], target = 3,
+所求解集为:[[1,1,1],[1,2],[3]]</p>
+
+<p>解题步骤：</p>
+
+<p><strong>①递归树</strong></p>
+
+<p><img src="https://i.niupic.com/images/2021/04/01/9gkm.png" alt="" /></p>
+
+<p>(绿色箭头上面的是路径，红色框[]则为结果，黄色框为选择列表)
+从上图看出，组合问题和子集问题一样，<code class="language-plaintext highlighter-rouge">1,2</code> 和 2,1 `是同一个组合，因此 <strong>需要引入start参数标识，每个状态中选择列表的起始位置</strong>。另外，<strong>每个状态还需要一个 sum 变量，来记录当前路径的和</strong></p>
+
+<p><strong>②找结束条件</strong></p>
+
+<p><strong>③找选择列表</strong></p>
+
+<p>④<strong>判断是否需要剪枝</strong></p>
+
+<p>从①中的递归树中发现，当前状态的sum大于target的时候就应该剪枝，不用再递归下去了</p>
+
+<p><strong>⑤做出选择</strong></p>
+
+<p>题中说数可以无限次被选择，那么 <code class="language-plaintext highlighter-rouge">i</code> 就不用 <code class="language-plaintext highlighter-rouge">+1</code> 。即下一层的选择列表，从自身开始。并且要更新当前状态的sum</p>
+
+<p><strong>⑥撤销选择</strong></p>
+
+<p>最终代码为</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; res;
+    vector&lt;int&gt; path;
+    int sum,start;
+    int t;
+    void dfs(vector&lt;int&gt; &amp;nums,int sum,int start){
+        if(sum==t) res.push_back(path);
+        for(int i=start;i&lt;nums.size();i++){
+            if((sum+nums[i])&gt;t) break;
+            path.push_back(nums[i]);
+            dfs(nums,sum+nums[i],i);
+            path.pop_back();
+        }
+    }
+    vector&lt;vector&lt;int&gt;&gt; combinationSum(vector&lt;int&gt;&amp; candidates, int target) {
+        sort(candidates.begin(),candidates.end());
+        t=target;
+        dfs(candidates,0,0);
+        return res;
+    }
+};
+</code></pre></div></div>
+
+<h3 id="总结子集组合类问题关键是用一个-start-参数来控制选择列表最后回溯六步走">总结：子集、组合类问题，关键是用一个 start 参数来控制选择列表！！最后回溯六步走：</h3>
+
+<ul>
+  <li><strong>①画出递归树，找到状态变量(回溯函数的参数)，这一步非常重要</strong>※</li>
+  <li><strong>②根据题意，确立结束条件</strong></li>
+  <li><strong>③找准选择列表(与函数参数相关),与第一步紧密关联</strong>※</li>
+  <li><strong>④判断是否需要剪枝</strong></li>
+  <li><strong>⑤作出选择，递归调用，进入下一层</strong></li>
+  <li><strong>⑥撤销选择</strong></li>
+</ul>
+
+
+  <!-- 引入share模块 -->
+  
+  <div class="social-share-wrapper">
+    <div class="social-share"></div>
+  </div>
+
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      
+        'qq'
+        ,
+        
+      
+        'wechat'
+        ,
+        
+      
+        'weibo'
+        ,
+        
+      
+        'twitter'
+        ,
+        
+      
+        'facebook'
+        
+      
+    ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+    wechatQrcodeHelper: '期待在朋友圈见到这篇文章'
+  });
+</script>
+
+</div>
+
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+
+
+
+    <section class="post-footer-item comment">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDI2OS8xMDgwNg=="></div>
+    </section>
+
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    <!-- City版安装代码已完成 -->
+
+
+
+
+
+<!-- 引入goto模块 -->
+<div class="bounceInRight animated go">
+  <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Top
+    </div>
+  </a>
+  <a title="底部有livere评论哦" class="gotobottom" href="#htmldown" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Foot
+    </div>
+  </a>
+</div>
+
+<!-- 引入页面底部模块 -->
+<footer id="bottom">
+  <br>
+  <span>Chunyang Lang ©
+  
+  
+    2018
+    -
+  
+  2021
+  <br>
+  Powered by <a href="https://www.jekyll.com.cn/">Jekyll</a> | <a href="https://github.com/xukimseven/HardCandy-Jekyll">HardCandy-Jekyll</a></span>
+</footer>
+
+
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
