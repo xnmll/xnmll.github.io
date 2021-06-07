@@ -26,7 +26,7 @@
 <link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
 <!-- Android Lolipop Theme Color -->
 <!-- <meta name="theme-color" content="#1464FB"> -->
-<title>acwing notes</title>
+<title>JVM笔记 && 常见面试题</title>
 <!-- 百度统计 -->
 
 <script>
@@ -96,7 +96,7 @@ var _hmt = _hmt || [];
 <!-- 引入博文顶部样式 -->
 <!-- 版本一 垃圾 -->
 <!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
-    <span class="wow fadeInUp" data-wow-delay="0.2s">acwing notes</span>
+    <span class="wow fadeInUp" data-wow-delay="0.2s">JVM笔记 && 常见面试题</span>
     <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
     <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
     <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;郎春阳</span>
@@ -108,30 +108,30 @@ var _hmt = _hmt || [];
   <!-- 页面宽度大于800px -->
   <div class="left-area">
     
-      <a href="/2021/04/01/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(60,127,204)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
-      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(60,127,204);"><sapn class="main">回溯算法一</sapn></span></div>
+      <a href="/2021/06/07/%E5%8F%8C%E6%8C%87%E9%92%88.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(60,127,204)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(60,127,204);"><sapn class="main">双指针算法</sapn></span></div>
     
   </div>
   <div class="post-titlearea">
-    <span class="wow fadeInUp" data-wow-delay="0.2s">acwing notes</span>
+    <span class="wow fadeInUp" data-wow-delay="0.2s">JVM笔记 && 常见面试题</span>
     <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
     <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
     <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;郎春阳</span> -->
   </div>
   <div class="right-area">
     
-      <a href="/2020/12/31/endOf2020.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='rgb(60,127,204)';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
-      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:rgb(60,127,204);"><sapn class="main">2020年度总结</sapn></span></div>
+      <a href="/2021/06/07/java%E5%A4%8D%E4%B9%A0.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='rgb(60,127,204)';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:rgb(60,127,204);"><sapn class="main">java基础复习</sapn></span></div>
     
   </div>
 
   <!-- 页面宽度小于800px -->
   <div class="post-changearea">
     
-      <a href="/2021/04/01/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95.html" class="leftchange" style="border-right: 1px solid rgb(60,127,204);border-bottom: 2px solid rgb(60,127,204);"><span>上一篇<br><br>回溯算法一</span></a>
+      <a href="/2021/06/07/%E5%8F%8C%E6%8C%87%E9%92%88.html" class="leftchange" style="border-right: 1px solid rgb(60,127,204);border-bottom: 2px solid rgb(60,127,204);"><span>上一篇<br><br>双指针算法</span></a>
     
     
-      <a href="/2020/12/31/endOf2020.html" class="rightchange" style="border-left: 1px solid rgb(60,127,204);border-bottom: 2px solid rgb(60,127,204);"><span>下一篇<br><br>2020年度总结</span></a>
+      <a href="/2021/06/07/java%E5%A4%8D%E4%B9%A0.html" class="rightchange" style="border-left: 1px solid rgb(60,127,204);border-bottom: 2px solid rgb(60,127,204);"><span>下一篇<br><br>java基础复习</span></a>
     
   </div>
 </div>
@@ -142,14 +142,29 @@ var _hmt = _hmt || [];
   
     
       <div class="postpage-subtitle" style="border-left: 8px solid rgb(60,127,204); border-right: 8px solid rgb(60,127,204)">
-        acwing notes
+        java
       </div>
     
   
 
   <!-- 文章内容 -->
-  <h3 id="acwing-学习笔记">acwing 学习笔记</h3>
+  <p><strong>PC寄存器的作用</strong></p>
 
+<p>PC寄存器用来存储指向下一条指令的地址，也即将要执行的指令代码。由执行引擎读取下一条指令。</p>
+
+<p><strong>原因</strong></p>
+
+<p>因为CPU需要不停的切换各个线程，这时候切换回来以后，就得知道接着从哪开始继续执行。</p>
+
+<p>JVM的字节码解释器就需要通过改变PC寄存器的值来明确下一条应该执行什么样的字节码指令。</p>
+
+<p><strong>PC寄存器为什么被设定为私有的？</strong></p>
+
+<p>我们都知道所谓的多线程在一个特定的时间段内只会执行其中某一个线程的方法，CPU会不停地做任务切换，这样必然导致经常中断或恢复，如何保证分毫无差呢？为了能够准确地记录各个线程正在执行的当前字节码指令地址，最好的办法自然是为每一个线程都分配一个PC寄存器，这样一来各个线程之间便可以进行独立计算，从而不会出现相互干扰的情况。</p>
+
+<p>由于CPU时间片轮限制，众多线程在并发执行过程中，任何一个确定的时刻，一个处理器或者多核处理器中的一个内核，只会执行某个线程中的一条指令。</p>
+
+<p>这样必然导致经常中断或恢复，如何保证分毫无差呢？每个线程在创建后，都会产生自己的程序计数器和栈帧，程序计数器在各个线程之间互不影响。</p>
 
   <!-- 引入share模块 -->
   

@@ -1,0 +1,72 @@
+I"�<h3 id="acwing-算法基础课-学习笔记">acwing 算法基础课 学习笔记</h3>
+
+<h4 id="第一讲-基础算法">第一讲 基础算法</h4>
+
+<ol>
+  <li>
+    <p>快速排序</p>
+
+    <ul>
+      <li>AcWing 785. 快速排序</li>
+      <li>AcWing 786. 第k个数</li>
+    </ul>
+  </li>
+  <li>
+    <p>归并排序</p>
+
+    <ul>
+      <li>AcWing 787. 归并排序</li>
+      <li>AcWing 788. 逆序对的数量</li>
+    </ul>
+  </li>
+  <li>
+    <p>二分</p>
+
+    <ul>
+      <li>AcWing 789. 数的范围</li>
+      <li>AcWing 790. 数的三次方根</li>
+    </ul>
+  </li>
+  <li>
+    <p>高精度</p>
+
+    <ul>
+      <li>AcWing 791. 高精度加法</li>
+      <li>AcWing 792. 高精度减法</li>
+      <li>AcWing 793. 高精度乘法</li>
+      <li>AcWing 794. 高精度除法</li>
+    </ul>
+  </li>
+  <li>前缀和与差分
+    <ul>
+      <li>AcWing 795. 前缀和</li>
+      <li>AcWing 796. 子矩阵的和</li>
+      <li>AcWing 797. 差分</li>
+      <li>AcWing 798. 差分矩阵</li>
+    </ul>
+  </li>
+  <li>双指针算法
+    <ul>
+      <li>AcWing 799. 最长连续不重复子序列</li>
+      <li>AcWing 800. 数组元素的目标和</li>
+      <li>AcWing 2816. 判断子序列</li>
+    </ul>
+  </li>
+  <li>位运算
+    <ul>
+      <li>AcWing 801. 二进制中1的个数</li>
+    </ul>
+  </li>
+  <li>离散化
+    <ul>
+      <li>AcWing 802. 区间和</li>
+    </ul>
+  </li>
+  <li>区间合并
+    <ul>
+      <li>AcWing 803. 区间合并</li>
+    </ul>
+  </li>
+</ol>
+
+:ET
