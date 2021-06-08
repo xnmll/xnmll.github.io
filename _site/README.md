@@ -1,1 +1,1 @@
-github gapes
+blogs
